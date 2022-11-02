@@ -1,0 +1,23 @@
+.botao {
+    display: block;
+    background-color: var(--cor-primaria);
+    border-radius: 7px;
+    width: 100%;
+    margin-top: 1rem;
+    max-width: 20rem;
+    padding: 1.125rem;
+    box-sizing: border-box;
+    color: var(--cor-contraste-claro);
+    font-size: var(--fonte-tamanho-botao);
+    align-self: center;
+    text-align: center;
+}
+
+.botao-simples {
+    border:  #55a6ff38 solid;
+    background-color: #d6eaff;
+    width: 50%;
+    text-decoration: solid;
+    align-self: center;
+    text-align: center;
+}
