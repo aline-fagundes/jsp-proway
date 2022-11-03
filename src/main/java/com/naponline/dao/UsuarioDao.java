@@ -74,7 +74,7 @@ public class UsuarioDao {
                     Usuario usuario = new Usuario();
                     usuario.setId(rs.getInt("id"));
                     usuario.setEmail(rs.getString("email"));
-                    usuario.setSenha(rs.getString("email"));
+                    usuario.setSenha(rs.getString("senha"));
                     usuario.setPerfil(rs.getString("perfil"));
                     usuarios.add(usuario);
                 }
@@ -98,7 +98,7 @@ public class UsuarioDao {
                 if(rs.next()){
                     usuario.setId(rs.getInt("id"));
                     usuario.setEmail(rs.getString("email"));
-                    usuario.setSenha(rs.getString("email"));
+                    usuario.setSenha(rs.getString("senha"));
                     usuario.setPerfil(rs.getString("perfil"));
                 }
             } catch (SQLException e) {
@@ -121,7 +121,7 @@ public class UsuarioDao {
                 if(rs.next()){
                     usuario.setId(rs.getInt("id"));
                     usuario.setEmail(rs.getString("email"));
-                    usuario.setSenha(rs.getString("email"));
+                    usuario.setSenha(rs.getString("senha"));
                     usuario.setPerfil(rs.getString("perfil"));
                 }
             } catch (SQLException e) {

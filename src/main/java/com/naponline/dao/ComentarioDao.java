@@ -129,8 +129,7 @@ public class ComentarioDao {
         Connection con = Conexao.conectar();
 
         if(con != null){
-            String sql = "update comentario set "+
-                    "conteudo = ?, esta_aprovado = ?, id_autor = ?, id_post = ? where id = ?";
+            String sql = "update comentario set conteudo = ?, esta_aprovado = ?, id_autor = ?, id_post = ? where id = ?";
             try {
                 PreparedStatement stm = con.prepareStatement(sql);
                 stm.setString(1, comentario.getConteudo());
