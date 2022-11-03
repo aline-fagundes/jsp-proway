@@ -3,6 +3,8 @@
 <%@ page import="com.naponline.dao.PostDao" %>
 <%@ page import="com.naponline.entidades.Comentario" %>
 <%@ page import="com.naponline.dao.ComentarioDao" %>
+<%@ page import="com.naponline.entidades.Usuario" %>
+<%@ page import="com.naponline.dao.UsuarioDao" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 
@@ -43,6 +45,9 @@
             <div class='input-container'>
 
                 <h2 class='cartao__titulo'> <% out.write(p.getTitulo()); %> </h2>
+                <p> Post número: </p>
+                <input type="text" id="id" name="id" class="input" value="<% out.write(idPost); %>" readonly />
+                <br>
                 <p> <% out.write(p.getConteudo()); %> </p>
 
             </div>
@@ -53,7 +58,7 @@
 
             <h2 class="cartao__titulo">O que achou do post?</h2>
 
-            <form action="#" class="formulario flex flex--coluna">
+            <form action= <% out.write("'post.jsp?id="+p.getId()+"'"); %> method="POST" class="formulario flex flex--coluna">
 
                 <fieldset>
                     <div class="input-container">
@@ -62,9 +67,37 @@
                     </div>
                 </fieldset>
 
-                <button class="botao">Comentar</button>
+                <input class="botao" type="submit" value="Comentar"/>
+
             </form>
         </section>
+
+        <%
+            if(request.getMethod() == "POST"){
+                Usuario usuario = (Usuario) session.getAttribute("usuario");
+
+                String conteudoComentario = request.getParameter("comentario");
+
+                if((conteudoComentario != null) && !(conteudoComentario.isEmpty())) {
+
+                    if(usuario != null) {
+
+                    int idAutorComentario = usuario.getId();
+                    int idPostComentario = Integer.parseInt(request.getParameter("id"));
+
+                    Comentario comentario = new Comentario(idPostComentario, idAutorComentario, conteudoComentario);
+                    String retorno = ComentarioDao.salvar(comentario);
+                    response.sendRedirect("index.jsp");
+
+                    } else {
+                        out.write("<script>");
+                        out.write("alert('É preciso estar logado para comentar!')");
+                        out.write("</script>");
+                        }
+                    }
+                }
+            %>
+
         </br>
         <section class="cartao cadastro">
 
@@ -80,7 +113,7 @@
                     out.write("<div class='input-container'>");
                     out.write("<p>" + comentario.getConteudo() + "</p>");
                     out.write("</div>");
-                    out.write("<br><br><br>");
+                    out.write("<br><br>");
                 }
             %>
 

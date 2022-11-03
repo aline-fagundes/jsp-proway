@@ -1,6 +1,8 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ page import="com.naponline.entidades.Post" %>
 <%@ page import="com.naponline.dao.PostDao" %>
+<%@ page import="com.naponline.entidades.Usuario" %>
+<%@ page import="com.naponline.dao.UsuarioDao" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 
@@ -20,6 +22,14 @@
     <link rel="stylesheet" href="./assets/css/componentes/tabela.css">
 </head>
 <body>
+
+    <%
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+            if(usuario == null || usuario.getPerfil().equals("visitante")) {
+                response.sendRedirect("login.jsp");
+            }
+    %>
+
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">

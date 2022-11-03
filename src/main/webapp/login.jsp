@@ -52,7 +52,7 @@
             Usuario usuario = UsuarioDao.consultarPorEmail(email);
 
             if(UsuarioDao.podeLogar(email, senha)){
-                session.setAttribute("email", email);
+                session.setAttribute("usuario", usuario);
 
                 if(usuario.getPerfil().equals("visitante")) {
                     response.sendRedirect("index.jsp");

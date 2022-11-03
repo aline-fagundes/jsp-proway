@@ -1,6 +1,8 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ page import="com.naponline.entidades.Post" %>
 <%@ page import="com.naponline.dao.PostDao" %>
+<%@ page import="com.naponline.entidades.Usuario" %>
+<%@ page import="com.naponline.dao.UsuarioDao" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 
@@ -23,7 +25,16 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
-                <li class="cartao__titulo">Naponline Bloguine</li>
+                <li class="cabecalho__link">Naponline Bloguine</li>
+
+                 <%
+                    Usuario usuario = (Usuario) session.getAttribute("usuario");
+                    if(usuario != null) {
+                        out.write("<li class='cabecalho__link'><a href='logout.jsp'>Deslogar</a></li>");
+                    } else {
+                        out.write("<li class='cabecalho__link'><a href='login.jsp'>Logar</a></li>");
+                    }
+                 %>
             </ul>
         </nav>
     </header>

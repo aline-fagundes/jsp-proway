@@ -211,8 +211,9 @@ true, 2, 10);
 
 
 -- SCRIPT PARA INSERIR COMENTÁRIOS NÃO APROVADOS
-insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Essa receita é horrível!!!", false, 2, 10);
-insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Não gostei do post!!!", false, 2, 1);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Essa receita é horrível!", false, 2, 10);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Não gostei do post!", false, 2, 1);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Esse blog não tem conteúdo bom!", false, 2, 1);
 
 
 
