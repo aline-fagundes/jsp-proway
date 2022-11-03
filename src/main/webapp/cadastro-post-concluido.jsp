@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naponline Bloguine | Cadastro concluído</title>
+    <title>Bloguine | Cadastro concluído</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./assets/css/base/base.css">
@@ -29,7 +29,7 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
-                <li class="cabecalho__link">Naponline Bloguine</li>
+                <li class="cabecalho__link">Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
                 <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
                 <li class="cabecalho__link"><a href="logout.jsp">Deslogar</a></li>

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naponline Bloguine | Login</title>
+    <title>Bloguine | Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./assets/css/base/base.css">
@@ -20,7 +20,7 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
-                <li class="cabecalho__link">Naponline Bloguine</li>
+                <li class="cabecalho__link">Bloguine</li>
             </ul>
         </nav>
     </header>
@@ -69,6 +69,10 @@
                 } else {
                     response.sendRedirect("index-admin.jsp");
                 }
+            } else {
+                out.write("<script>");
+                out.write("alert('Dados de login incorretos!')");
+                out.write("</script>");
             }
         }
     %>
