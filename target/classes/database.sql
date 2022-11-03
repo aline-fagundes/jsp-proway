@@ -240,40 +240,7 @@ true, 2, 10);
 
 
 
--- SCRIPT PARA POPULAR TABELA DE POSTS COM POSTS SEM COMENTÁRIOS
-insert into post(titulo, conteudo) values("5 curiosidades sobre café", 
-"1)  O café mais caro do mundo é o KopiLuwak, produzido na Indonésia. O alto valor se deve à raridade do grão. A produção é extremamente limitada, pois depende da ingestão das frutas de café feita por pequenos mamíferos da região,conhecidos como Civetas. Ao ingerirem, o grão do café passa por um processo de fermentação natural que deixa um aroma peculiar. <br><br>
-02)  De todas as matérias-primas do mundo, o café é a segunda mais comercializada do mundo. Perde apenas para o petróleo. <br><br>
-03)  Existem selos de qualidade que avaliam a produção sustentável do café, e isso melhorou muito as condições de trabalho em muitos plantios. A Rainforest Alliance e a UTZ Certified focam na sustentabilidade e responsabilidade social dos cultivos ao redor do mundo. Ter o selo valoriza muito o produto. <br><br>
-04)  O espresso, uma das formas de preparo mais conhecidas do mundo, foi criada na Itália, e a origem desse nome foi pelo fato de ser umabebida feita sob pressão. A maioria das pessoas pensa que esse nome vem da rapidez com que o café é feito. Se enganam. Inclusive, por conta disso, a tradução foi feita para o nosso idioma de maneira equivocada: chamamos aqui de expresso. A tradução correta seria algo como “café pressionado” que, convenhamos, não é atraente. Deixa errado mesmo que fica mais bonito. <br><br>
-05)  Os melhores grãos só podem ser cultivados em altitudes muito elevadas, acima de 1400m.");
-
-
-insert into post(titulo, conteudo) values("Bolo de chocolate", 
-"Ingredientes: <br><br>
-1/2 xícara (chá) de óleo <br>
-3 cenouras médias raladas <br>
-4 ovos <br>
-2 xícaras (chá) de açúcar <br>
-2 e 1/2 xícaras (chá) de farinha de trigo <br>
-1 colher (sopa) de fermento em pó <br>
-1 colher (sopa) de manteiga <br>
-3 colheres (sopa) de chocolate em pó <br>
-1 xícara (chá) de açúcar <br>
-1 xícara (chá) de leite <br>
-<br><br><br>
-Instruções: <br><br>
-Em um liquidificador, adicione a cenoura, os ovos e o óleo, depois misture. <br>
-Acrescente o açúcar e bata novamente por 5 minutos. <br>
-Em uma tigela ou na batedeira, adicione a farinha de trigo e depois misture novamente. <br>
-Acrescente o fermento e misture lentamente com uma colher.<br> 
-Asse em um forno preaquecido a 180° C por aproximadamente 40 minutos. <br>
-Despeje em uma tigela a manteiga, o chocolate em pó, o açúcar e o leite, depois misture. <br>
-Leve a mistura ao fogo e continue misturando até obter uma consistência cremosa, depois despeje a calda por cima do bolo.");
-
-
-
--- SCRIPT PARA POPULAR TABELA DE COMENTÁRIOS COM COMENTÁRIOS SEM APROVAÇÃO
+-- SCRIPT PARA INSERIR COMENTÁRIOS NÃO APROVADOS
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Essa receita é horrível!", false, 2, 10);
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Não gostei do post!", false, 2, 8);
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Esse blog não tem conteúdo bom!", false, 2, 6);

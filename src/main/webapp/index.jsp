@@ -50,7 +50,7 @@
                for(Post post : posts){
 
                     String conteudo = post.getConteudo();
-                    String previa = conteudo.substring(0, (conteudo.length() < 150 ? conteudo.length() : 150));
+                    String previa = conteudo.substring(0, (conteudo.length() < 15 ? conteudo.length() : 15));
 
                     out.write("<div class='input-container'>");
                     out.write("<h2 class='cartao__titulo'>" + post.getTitulo() + "</h2>");

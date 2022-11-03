@@ -39,7 +39,7 @@ public class ComentarioDao {
         if(con != null) {
             try {
                 PreparedStatement stm =
-                        con.prepareStatement("select * from comentario");
+                        con.prepareStatement("select * from comentario order by id desc");
                 ResultSet rs = stm.executeQuery();
 
                 while (rs.next()) {
