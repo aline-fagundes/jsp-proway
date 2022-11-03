@@ -20,8 +20,8 @@
 <body>
 
     <%
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-        if(usuario == null || usuario.getPerfil().equals("visitante")) {
+        Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
+        if(usuarioLogado == null || usuarioLogado.getPerfil().equals("visitante")) {
             response.sendRedirect("login.jsp");
         }
     %>
@@ -29,18 +29,16 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
-                <li class="cabecalho__link"><a href="cadastro-post.jsp">Cadastrar post</a></li>
                 <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
                 <li class="cabecalho__link"><a href="logout.jsp">Deslogar</a></li>
             </ul>
         </nav>
     </header>
     
-    <main class="container flex flex--coluna flex--centro">
-
+    <main class="container flex flex--coluna flex--coluna">
         <br>
-
         <section class="cadastro-cartao cartao">
             <h1 class="cadastro-cartao__titulo cartao__titulo">Seu post foi criado com sucesso!</h1>
             <a href="cadastro-post.jsp"><input type="button" class="botao" value="Cadastrar outro post"/></a>

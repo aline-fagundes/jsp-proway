@@ -12,6 +12,7 @@ public class Post {
     public Post() {
 
     }
+
     public Post(String titulo, String conteudo) {
         this.titulo = titulo;
         this.conteudo = conteudo;

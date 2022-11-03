@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naponline Bloguine | Posts</title>
+    <title>Naponline Bloguine | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./assets/css/base/base.css">
@@ -26,10 +26,11 @@
         <nav>
             <ul class="cabecalho__lista-navegacao">
                 <li class="cabecalho__link">Naponline Bloguine</li>
+                <li class='cabecalho__link'><a href='todos-os-posts.jsp'>Posts</a></li>
 
                  <%
-                    Usuario usuario = (Usuario) session.getAttribute("usuario");
-                    if(usuario != null) {
+                    Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
+                    if(usuarioLogado != null) {
                         out.write("<li class='cabecalho__link'><a href='logout.jsp'>Deslogar</a></li>");
                     } else {
                         out.write("<li class='cabecalho__link'><a href='login.jsp'>Logar</a></li>");
@@ -41,11 +42,10 @@
 
     <main class="container flex flex--centro flex--coluna">
         <section class="cartao cadastro">
-
-            <h1 class="cartao__titulo">Bloguine</h1>
+            <h1 class="cartao__titulo">Home do Bloguine</h1>
             
             <%
-               List<Post> posts = PostDao.consultarTodos();
+               List<Post> posts = PostDao.consultarDezMaisRecentes();
 
                for(Post post : posts){
 

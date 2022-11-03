@@ -8,6 +8,14 @@
     margin-bottom: 1rem;
 }
 
+.conteudo{
+    width:150px;
+    height:30px;
+    padding: 5px;
+    background-color: #55a6ff38;
+    padding: 10px;
+}
+
 .input-container {
     font-weight: var(--fonte-peso-input);
     position: relative;

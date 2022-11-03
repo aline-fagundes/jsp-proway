@@ -29,7 +29,6 @@ constraint id_post foreign key(id_post) references post(id)
 -- SCRIPT PARA POPULAR TABELA DE USUÁRIOS
 insert into usuario(email, senha, perfil) values("admin@email.com", "SENHA123#", "admin");
 insert into usuario(email, senha, perfil) values("aline@email.com", "SENHA123#", "visitante");
-insert into usuario(email, senha, perfil) values("vilson@email.com", "SENHA123#", "visitante");
 
 
 
@@ -43,6 +42,10 @@ insert into post(titulo, conteudo) values("5 dicas para nunca mais errar nos don
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Eu amo donuts! Essas dicas certamente vão me ajduar muito...",
+true, 2, 1);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Muito obrigada pelas dicas...",
 true, 2, 1);
 
 
@@ -69,6 +72,10 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Já testei essa receita e deu super certo!",
 true, 2, 2);
 
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Que pena que estou de dieta...",
+true, 2, 2);
+
 
 insert into post(titulo, conteudo) values("Mais 5 dicas para nunca mais errar nos donuts", 
 "1) Massa grudenta tem jeito – Algumas massas vão ficar bem grudentas logo depois que você misturar todos os ingredientes. Tenha paciência. Se tiver uma batedeira planetária, pegue o gancho e deixa a massa lá até que desgrude da tigela. Se for à mão, sove a massa até desgrudar. Pode levar muito tempo, mas vai dar certo. <br><br>
@@ -79,6 +86,10 @@ insert into post(titulo, conteudo) values("Mais 5 dicas para nunca mais errar no
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Muito obrigada pelas dicas... Já vou colocar donuts para assar!",
+true, 2, 3);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Eu sempre errava a temperatura do forno!",
 true, 2, 3);
 
 
@@ -98,6 +109,9 @@ Continue em fogo baixo para ir secando até atingir a consistência de geleia.")
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Geleia de pimenta com dadinho de tapioca é uma combinação perfeita!",
 true, 2, 4);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Não tinha ideia que tinha como ingrediente abacaxi!",
+true, 2, 4);
 
 
 insert into post(titulo, conteudo) values("5 ideias de doces para o Dia das Bruxas", 
@@ -109,6 +123,10 @@ insert into post(titulo, conteudo) values("5 ideias de doces para o Dia das Brux
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Que criativo! Vou fazer o red velvet para minha festa de halloween!",
+true, 2, 5);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Adorei a ideia dos morangos!",
 true, 2, 5);
 
 
@@ -133,6 +151,10 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "A temperatura para assar aqui não deu muito certo...",
 true, 2, 6);
 
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Trocar os pistaches por nozes também dá super certo...",
+true, 2, 6);
+
 
 insert into post(titulo, conteudo) values("Mais 5 ideias de doces para o Dia das Bruxas", 
 "1) Limonada preta: Você pode adicionar carvão ativado a qualquer bebida, como limonada por exemplo, para deixá-la preta. Disponível em lojas de produtos naturais e farmácias. Ele pode ser ingerido sem problemas. <br><br>
@@ -143,6 +165,10 @@ insert into post(titulo, conteudo) values("Mais 5 ideias de doces para o Dia das
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Esculpir a melancia aqui foi um desastre, rs! Mas nos divertimos muito.",
+true, 2, 7);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Vou fazer os olhos no espeto!",
 true, 2, 7);
 
 
@@ -165,6 +191,10 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Essa receita de pudim é perfeita!",
 true, 2, 8);
 
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Eu sempre erro no caramelo!",
+true, 2, 8);
+
 
 insert into post(titulo, conteudo) values("5 sabores de brigadeiro", 
 "Quem não ama brigadeiro?  <br>
@@ -178,6 +208,10 @@ Existem diversas receitas para fazer o doce – com frutas, especiarias e até m
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Nunca imaginei quantas possibilidades existem para fazer sabores de brigadeiro!",
+true, 2, 9);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Fiquei curiosa para experimentar o de café!",
 true, 2, 9);
 
 
@@ -197,7 +231,11 @@ Quando perceber que está desgrudando da panela, acrescente o creme de leite fre
 Sirva para comer com colher ou enrole-os.");
 
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
-"Eu amei essa receita... O brigadeiro ficou maravilhoso! Pena que o pistache está muito caro.",
+"Eu amei essa receita... O brigadeiro ficou maravilhoso!",
+true, 2, 10);
+
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
+"Pena que o pistache está muito caro.",
 true, 2, 10);
 
 

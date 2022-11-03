@@ -33,9 +33,9 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
                 <li class="cabecalho__link"><a href="cadastro-post.jsp">Cadastrar post</a></li>
-                <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
                 <li class="cabecalho__link"><a href="login.jsp">Deslogar</a></li>
             </ul>
         </nav>

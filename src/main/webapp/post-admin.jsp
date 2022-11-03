@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
     <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
     <link rel="stylesheet" href="./assets/css/componentes/botao.css">
-    <link rel="stylesheet" href="./assets/css/componentes/tabela.css">
 </head>
 <body>
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
                 <li class="cabecalho__link"><a href="cadastro-post.jsp">Cadastrar post</a></li>
                 <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
@@ -61,6 +61,13 @@
             <%
                 int post = Integer.parseInt(request.getParameter("id"));
                 List<Comentario> comentarios = ComentarioDao.consultarPorPost(post);
+
+                if(comentarios.isEmpty()) {
+                    out.write("<div class='input-container'>");
+                    out.write("<input type='text' class='input' value='Ainda não há conteúdo aprovado para esse post!' readonly />");
+                    out.write("</div>");
+                    out.write("<br><br>");
+                }
 
                 for(Comentario comentario : comentarios){
                     out.write("<div class='input-container'>");

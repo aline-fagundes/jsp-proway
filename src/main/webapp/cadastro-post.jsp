@@ -21,8 +21,8 @@
 <body>
 
     <%
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-        if(usuario == null || usuario.getPerfil().equals("visitante")) {
+        Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
+        if(usuarioLogado == null || usuarioLogado.getPerfil().equals("visitante")) {
                 response.sendRedirect("login.jsp");
         }
     %>
@@ -30,8 +30,8 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
-                <li class="cabecalho__link"><a href="cadastro-post.jsp">Cadastrar post</a></li>
                 <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
                 <li class="cabecalho__link"><a href="logout.jsp">Deslogar</a></li>
             </ul>
@@ -44,7 +44,6 @@
             <h2 class="cartao__titulo">Cadastre um post</h2>
 
             <form action="cadastro-post.jsp" class="formulario flex flex--coluna">
-
                 <fieldset>
                     <legend class="formulario__legenda">Informe...</legend>
 
@@ -52,12 +51,13 @@
                         <input name="titulo" id="titulo" class="input" type="text" placeholder="Título" required>
                         <label class="input-label" for="titulo">Título</label>
                     </div>
+
                     <div class="input-container">
                         <input name="conteudo" id="conteudo" class="input" type="text" placeholder="conteudo" required>
                         <label class="input-label" for="conteudo">Conteúdo</label>
                     </div>
-                </fieldset>
 
+                </fieldset>
                 <button class="botao">Cadastrar</button>
             </form>
         </section>

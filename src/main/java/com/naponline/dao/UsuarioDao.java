@@ -14,6 +14,7 @@ public class UsuarioDao {
 
     public static boolean podeLogar(String email, String senha){
         Connection con = Conexao.conectar();
+
         String sql = "select * from usuario where email = ? and senha = ?";
         try {
             PreparedStatement stm = con.prepareStatement(sql);
@@ -29,6 +30,7 @@ public class UsuarioDao {
 
     public static boolean usuarioExiste(String email){
         Connection con = Conexao.conectar();
+
         String sql = "select * from usuario where email = ?";
         try {
             PreparedStatement stm = con.prepareStatement(sql);
@@ -45,8 +47,7 @@ public class UsuarioDao {
         Connection con = Conexao.conectar();
 
         if(con != null) {
-            String sql = "insert into usuario(email, senha)" +
-                    "values(?,?)";
+            String sql = "insert into usuario(email, senha) values(?,?)";
             try {
                 PreparedStatement stm = con.prepareStatement(sql);
                 stm.setString(1, usuario.getEmail());
@@ -66,9 +67,7 @@ public class UsuarioDao {
 
         if(con != null) {
             try {
-                PreparedStatement stm =
-                        con.prepareStatement(
-                                "select * from usuario");
+                PreparedStatement stm = con.prepareStatement("select * from usuario");
                 ResultSet rs = stm.executeQuery();
 
                 while (rs.next()) {

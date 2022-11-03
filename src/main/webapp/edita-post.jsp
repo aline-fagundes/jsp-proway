@@ -21,6 +21,7 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine</li>
                 <li class="cabecalho__link"><a href="index-admin.jsp">Posts</a></li>
                 <li class="cabecalho__link"><a href="cadastro-post.jsp">Cadastrar post</a></li>
                 <li class="cabecalho__link"><a href="modera-comentarios.jsp">Moderação</a></li>
@@ -36,9 +37,7 @@
 
     <main class="container flex flex--centro flex--coluna">
         <section class="cartao">
-
-            <h2 class="cartao__titulo">Editando...</h2>
-
+            <h2 class="cartao__titulo">Edição</h2>
             <form action="edita-post.jsp" method="POST" class="formulario flex flex--coluna">
                 <input type="text" id="id-post" name="id" class="input" value="<% out.write(idPost); %>" readonly />
                 <br>
@@ -54,8 +53,8 @@
                         <input name="conteudo" id="conteudo" class="input" type="text" placeholder="Conteúdo" value="<% out.write(p.getConteudo()); %>">
                         <label class="input-label" for="conteudo">Conteúdo</label>
                     </div>
-                </fieldset>
 
+                </fieldset>
                 <button class="botao">Alterar</button>
             </form>
         </section>

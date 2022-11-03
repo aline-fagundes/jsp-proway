@@ -14,6 +14,7 @@ public class PostDao {
 
     public static boolean tituloExiste(String titulo){
         Connection con = Conexao.conectar();
+
         String sql = "select * from post where titulo = ?";
         try {
             PreparedStatement stm = con.prepareStatement(sql);
@@ -30,14 +31,12 @@ public class PostDao {
         Connection con = Conexao.conectar();
 
         if(con != null) {
-            String sql = "insert into post(titulo, conteudo)" +
-                    "values(?,?)";
+            String sql = "insert into post(titulo, conteudo) values(?,?)";
             try {
                 PreparedStatement stm = con.prepareStatement(sql);
                 stm.setString(1, post.getTitulo());
                 stm.setString(2, post.getConteudo());
                 stm.execute();
-
                 return "Registro inserido com sucesso!";
             } catch (SQLException e) {
                 return  "Erro: " + e.getMessage();
@@ -52,9 +51,30 @@ public class PostDao {
 
         if(con != null) {
             try {
-                PreparedStatement stm =
-                        con.prepareStatement(
-                                "select * from post order by id desc");
+                PreparedStatement stm = con.prepareStatement("select * from post order by id desc");
+                ResultSet rs = stm.executeQuery();
+
+                while (rs.next()) {
+                    Post post = new Post();
+                    post.setId(rs.getInt("id"));
+                    post.setTitulo(rs.getString("titulo"));
+                    post.setConteudo(rs.getString("conteudo"));
+                    posts.add(post);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return posts;
+    }
+
+    public  static List<Post> consultarDezMaisRecentes() {
+        List<Post> posts = new ArrayList<Post>();
+        Connection con = Conexao.conectar();
+
+        if(con != null) {
+            try {
+                PreparedStatement stm = con.prepareStatement("select * from post order by id desc limit 10");
                 ResultSet rs = stm.executeQuery();
 
                 while (rs.next()) {
@@ -104,7 +124,6 @@ public class PostDao {
                 stm.setString(2, post.getConteudo());
                 stm.setInt(3, post.getId());
                 stm.execute();
-
                 return "Registro alterado com sucesso!";
             } catch (SQLException e) {
                 return "Não foi possível alterar registro!";

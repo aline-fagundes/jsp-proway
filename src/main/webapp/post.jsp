@@ -27,7 +27,18 @@
     <header class="cabecalho container">
         <nav>
             <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link">Naponline Bloguine </li>
                 <li class="cabecalho__link"><a href="index.jsp">Home</a></li>
+                <li class='cabecalho__link'><a href='todos-os-posts.jsp'>Posts</a></li>
+
+                <%
+                    Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
+                        if(usuarioLogado != null) {
+                            out.write("<li class='cabecalho__link'><a href='logout.jsp'>Deslogar</a></li>");
+                        } else {
+                            out.write("<li class='cabecalho__link'><a href='login.jsp'>Logar</a></li>");
+                        }
+                %>
             </ul>
         </nav>
     </header>
@@ -108,6 +119,13 @@
             <%
                 int post = Integer.parseInt(request.getParameter("id"));
                 List<Comentario> comentarios = ComentarioDao.consultarPorPost(post);
+
+                if(comentarios.isEmpty()) {
+                    out.write("<div class='input-container'>");
+                    out.write("<input type='text' class='input' value='Seja o primeiro a comentar!' readonly />");
+                    out.write("</div>");
+                    out.write("<br><br>");
+                }
 
                 for(Comentario comentario : comentarios){
                     out.write("<div class='input-container'>");

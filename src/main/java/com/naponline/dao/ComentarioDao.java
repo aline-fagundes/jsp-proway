@@ -24,7 +24,6 @@ public class ComentarioDao {
                 stm.setInt(3, comentario.getIdAutor());
                 stm.setInt(4, comentario.getIdPost());
                 stm.execute();
-
                 return "Registro inserido com sucesso!";
             } catch (SQLException e) {
                 return  "Erro: " + e.getMessage();
@@ -118,7 +117,6 @@ public class ComentarioDao {
                 PreparedStatement stm = con.prepareStatement(sql);
                 stm.setInt(1, idComentario);
                 stm.execute();
-
                 return "Registro alterado com sucesso!";
             } catch (SQLException e) {
                 return "Não foi possível alterar registro!";
@@ -132,8 +130,7 @@ public class ComentarioDao {
 
         if(con != null){
             String sql = "update comentario set "+
-                    "conteudo = ?, esta_aprovado = ?, id_autor = ?, id_post = ? "+
-                    " where id = ?";
+                    "conteudo = ?, esta_aprovado = ?, id_autor = ?, id_post = ? where id = ?";
             try {
                 PreparedStatement stm = con.prepareStatement(sql);
                 stm.setString(1, comentario.getConteudo());
@@ -142,7 +139,6 @@ public class ComentarioDao {
                 stm.setInt(4, comentario.getIdPost());
                 stm.setInt(5, comentario.getId());
                 stm.execute();
-
                 return "Registro alterado com sucesso!";
             } catch (SQLException e) {
                 return "Não foi possível alterar registro!";
