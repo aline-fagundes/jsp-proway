@@ -46,7 +46,6 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 1);
 
 
-
 insert into post(titulo, conteudo) values("Brownies de chocolate branco", 
 "Ingredientes: <br><br>
 1/2 xícara manteiga <br>
@@ -71,7 +70,6 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 2);
 
 
-
 insert into post(titulo, conteudo) values("Mais 5 dicas para nunca mais errar nos donuts", 
 "1) Massa grudenta tem jeito – Algumas massas vão ficar bem grudentas logo depois que você misturar todos os ingredientes. Tenha paciência. Se tiver uma batedeira planetária, pegue o gancho e deixa a massa lá até que desgrude da tigela. Se for à mão, sove a massa até desgrudar. Pode levar muito tempo, mas vai dar certo. <br><br>
 2) Deixe a massa crescer – Para crescer, este tipo de massa precisa de um local quente e úmido. Se tiver um microondas, coloque uma caneca com água para aquecer por dois minutos, depois afaste a caneca pro canto e deixe a massa descansar lá dentro. Acredito que dê pra fazer o mesmo no forno, mas eu usaria uma panela maior em vez da caneca. O segundo crescimento pode ser feito em temperatura ambiente mesmo. <br><br>
@@ -82,7 +80,6 @@ insert into post(titulo, conteudo) values("Mais 5 dicas para nunca mais errar no
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Muito obrigada pelas dicas... Já vou colocar donuts para assar!",
 true, 2, 3);
-
 
 
 insert into post(titulo, conteudo) values("Geleia de pimenta", 
@@ -103,7 +100,6 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 4);
 
 
-
 insert into post(titulo, conteudo) values("5 ideias de doces para o Dia das Bruxas", 
 "1) Cookies de aranhas: Eu sei que pode parecer complicado, mas se você olhar bem não passa de um cookie e você pode improvisar um sonho de valsa ou algum chocolate redondo em cima. <br><br>
 2) Brownies com dentadura: Massa de brownie pronta ou de bolo de chocolate. Depois um glacê por cima, marshmallow, chantilly, buttercream, cobertura de cream cheese ou mesmo chocolate derretido. Jogue uma destas dentaduras que você encontra em qualquer supermercado no corredor de doces. Finalize com calda de morango – as de sorvete mesmo. <br><br>
@@ -114,7 +110,6 @@ insert into post(titulo, conteudo) values("5 ideias de doces para o Dia das Brux
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Que criativo! Vou fazer o red velvet para minha festa de halloween!",
 true, 2, 5);
-
 
 
 insert into post(titulo, conteudo) values("Barra de chocolate com morango e pistache", 
@@ -139,7 +134,6 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 6);
 
 
-
 insert into post(titulo, conteudo) values("Mais 5 ideias de doces para o Dia das Bruxas", 
 "1) Limonada preta: Você pode adicionar carvão ativado a qualquer bebida, como limonada por exemplo, para deixá-la preta. Disponível em lojas de produtos naturais e farmácias. Ele pode ser ingerido sem problemas. <br><br>
 2) Olhos no espeto: Pode ser o que você quiser dentro: brigadeiro, trufas, bolo amassado como cake pop, etc. Depois cubra com chocolate branco derretido e os detalhes podem ser pintados com corante alimentício ou com pasta americana como na foto. <br><br>
@@ -150,7 +144,6 @@ insert into post(titulo, conteudo) values("Mais 5 ideias de doces para o Dia das
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Esculpir a melancia aqui foi um desastre, rs! Mas nos divertimos muito.",
 true, 2, 7);
-
 
 
 insert into post(titulo, conteudo) values("Pudim de leite", 
@@ -173,7 +166,6 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 8);
 
 
-
 insert into post(titulo, conteudo) values("5 sabores de brigadeiro", 
 "Quem não ama brigadeiro?  <br>
 Existem diversas receitas para fazer o doce – com frutas, especiarias e até mesmo vegano, sem glúten ou lactose! Se tornando uma peça chave para atender a necessidade de todos... <br>
@@ -187,7 +179,6 @@ Existem diversas receitas para fazer o doce – com frutas, especiarias e até m
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 "Nunca imaginei quantas possibilidades existem para fazer sabores de brigadeiro!",
 true, 2, 9);
-
 
 
 insert into post(titulo, conteudo) values("Brigadeiro de pistache", 
@@ -210,10 +201,13 @@ insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values(
 true, 2, 10);
 
 
+
 -- SCRIPT PARA INSERIR COMENTÁRIOS NÃO APROVADOS
 insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Essa receita é horrível!", false, 2, 10);
-insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Não gostei do post!", false, 2, 1);
-insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Esse blog não tem conteúdo bom!", false, 2, 1);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Não gostei do post!", false, 2, 8);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Esse blog não tem conteúdo bom!", false, 2, 6);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Que legal... Estou gostando muito dos posts!", false, 2, 4);
+insert into comentario(conteudo, esta_aprovado, id_autor, id_post) values("Amei o post!", false, 2, 2);
 
 
 
