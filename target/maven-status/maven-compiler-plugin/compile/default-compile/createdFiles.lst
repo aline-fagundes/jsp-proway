@@ -1,7 +1,0 @@
-com\naponline\dao\ComentarioDao.class
-com\naponline\entidades\Comentario.class
-com\naponline\dao\UsuarioDao.class
-com\naponline\entidades\Usuario.class
-com\naponline\entidades\Post.class
-com\naponline\dao\PostDao.class
-com\naponline\utilidades\Conexao.class
